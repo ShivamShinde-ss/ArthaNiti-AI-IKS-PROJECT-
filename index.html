@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ArthaNiti AI - A rule-based strategic decision support system that transforms Kautilya's Arthashastra into a computational expert system delivering modern strategic recommendations via predefined IF-THEN rules.">
+  <meta name="keywords" content="Arthashastra, Kautilya, Chanakya, Rule-Based Expert System, Indian Knowledge System, Strategic Decision Support, Ancient Wisdom, AI, Decision Intelligence">
+  <meta name="author" content="ArthaNiti AI Research">
+  <meta name="theme-color" content="#0F0B08">
+  <meta property="og:title" content="ArthaNiti AI - Where Ancient Wisdom Powers Modern Decisions">
+  <meta property="og:description" content="Kautilya's Arthashastra as a Rule-Based Strategic Decision Support System.">
+  <meta property="og:type" content="website">
+  <title>ArthaNiti AI | Where Ancient Wisdom Powers Modern Decisions</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- ============================== SVG ICON SPRITE ============================== -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <defs>
+      <symbol id="icon-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 6c-1.8-1.6-4.4-2-8-2v14c3.6 0 6.2.4 8 2 1.8-1.6 4.4-2 8-2V4c-3.6 0-6.2.4-8 2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 6v14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+      <symbol id="icon-flow" viewBox="0 0 24 24"><circle cx="5" cy="5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="19" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="5" cy="19" r="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M7 5h8a2 2 0 0 1 2 2v3M7 19h8a2 2 0 0 0 2-2v-3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-scroll" viewBox="0 0 24 24"><path d="M6 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M6 4H5a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h1M10 8h6M10 12h6M10 16h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 2.5 20 6v5c0 5.2-3.4 9.1-8 10.5C7.4 20.1 4 16.2 4 11V6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m8.5 11.5 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5v9M14.5 9.5c-.4-1-1.3-1.5-2.5-1.5-1.4 0-2.5.7-2.5 1.8 0 2.7 5 1.4 5 3.9 0 1.1-1.1 1.8-2.5 1.8-1.2 0-2.2-.5-2.6-1.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-columns" viewBox="0 0 24 24"><path d="M4 3h16M5 3v3h14V3M6 6l1 15h10l1-15M12 6v15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+      <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 12h17M12 3.5c2.5 2.3 3.7 5.3 3.7 8.5s-1.2 6.2-3.7 8.5c-2.5-2.3-3.7-5.3-3.7-8.5s1.2-6.2 3.7-8.5Z" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+      <symbol id="icon-warning" viewBox="0 0 24 24"><path d="M12 3.5 22 20H2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10v4.5M12 17.5v.01" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-scale" viewBox="0 0 24 24"><path d="M12 3v18M8 21h8M5 7h14M12 3l-6 4M12 3l6 4M6 7l-2.5 6a3.5 3.5 0 0 0 7 0ZM18 7l-2.5 6a3.5 3.5 0 0 0 7 0Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a7 7 0 0 0-4 12.7c.7.5 1 1.4 1 2.3h6c0-.9.3-1.8 1-2.3A7 7 0 0 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-brain" viewBox="0 0 24 24"><path d="M9.5 3v6a2 2 0 0 1-4 0V6.2C4 6.8 3 8.1 3 9.6V12a9 9 0 0 0 18 0V9.6c0-1.5-1-2.8-2.5-3.4V9a2 2 0 0 1-4 0V3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 3a2.5 2.5 0 0 0 0 5M14.5 3a2.5 2.5 0 0 1 0 5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+      <symbol id="icon-rule" viewBox="0 0 24 24"><path d="M8 3v18M8 7h3M8 12h3M8 17h3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><rect x="14" y="5" width="6" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M14 9.5h6" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13.5 6 20 12l-6.5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-user-plus" viewBox="0 0 24 24"><circle cx="10" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M2.5 21a7.5 7.5 0 0 1 15 0M19 12v6M16 15h6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-logout" viewBox="0 0 24 24"><path d="M14 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8M10 12h10M16.5 7.5 21 12l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-crown" viewBox="0 0 24 24"><path d="m3 8 4.5 4L12 6l4.5 6L21 8l-1.5 9h-15Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M4.5 20h15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-lotus" viewBox="0 0 24 24"><path d="M12 20c-5 0-8-2.5-8-6 2.5 0 4.5 1 6 2.5M12 20c5 0 8-2.5 8-6-2.5 0-4.5 1-6 2.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 20c0-4 0-8-4-10 0 3 .5 5 4 10Zm0 0c0-4 0-8 4-10 0 3-.5 5-4 10Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M21 20H3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-pdf" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 3v4h4M9 13h6M9 16.5h6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6L4 8.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M4 4v4.5H8.5M12 8v4l2.5 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6ZM10 19a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-star" viewBox="0 0 24 24"><path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.3l6.1-.7Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-send" viewBox="0 0 24 24"><path d="M21 3 10.5 13.5M21 3l-7 18-3.5-7.5L3 10Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 3v4h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-dashboard" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M14 14h6.5v6.5H14Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-quote" viewBox="0 0 24 24"><path d="M10 7c-3 1-5 3.5-5 7v3h5v-6H7.5C7.5 9.5 8.5 8 10 7.5ZM19 7c-3 1-5 3.5-5 7v3h5v-6h-2.5C16.5 9.5 17.5 8 19 7.5Z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ============================== LOADER ============================== -->
+  <div class="loader" id="loader" role="status" aria-live="polite" aria-label="Loading ArthaNiti AI">
+    <div class="loader__inner">
+      <img src="assets/icons/ashoka-emblem.svg" alt="" class="loader__emblem" width="120" height="120">
+      <h1 class="loader__title">ArthaNiti <span>AI</span></h1>
+      <p class="loader__tag">Where Ancient Wisdom Powers Modern Decisions</p>
+      <div class="loader__bar" aria-hidden="true">
+        <div class="loader__bar-fill" id="loader-bar"></div>
+      </div>
+      <p class="loader__percent" id="loader-percent">0%</p>
+      <p class="loader__text">Consulting the Principles of Arthashastra...</p>
+    </div>
+  </div>
+
+  <!-- ============================== BACKGROUND EFFECTS ============================== -->
+  <div class="bg-effects" id="bg-effects" aria-hidden="true">
+    <div class="bg-effects__veil"></div>
+    <div class="bg-effects__ornament bg-effects__ornament--top"></div>
+    <div class="bg-effects__ornament bg-effects__ornament--bottom"></div>
+    <div class="bg-effects__particles" id="particles"></div>
+  </div>
+
+  <!-- ============================== NAVIGATION ============================== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__container container">
+      <a href="#hero" class="navbar__brand" id="nav-brand" aria-label="ArthaNiti AI - Home">
+        <img src="assets/icons/logo.svg" alt="" class="navbar__logo" width="40" height="40">
+        <span class="navbar__name">ArthaNiti <em>AI</em></span>
+      </a>
+
+      <button class="navbar__toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <nav class="navbar__menu" id="nav-menu" aria-label="Primary navigation">
+        <ul class="navbar__links">
+          <li><a href="#hero" class="navbar__link is-active"><svg class="icon" aria-hidden="true"><use href="#icon-home"></use></svg>Home</a></li>
+          <li><a href="#about" class="navbar__link"><svg class="icon" aria-hidden="true"><use href="#icon-book"></use></svg>About</a></li>
+          <li><a href="#modules" class="navbar__link"><svg class="icon" aria-hidden="true"><use href="#icon-grid"></use></svg>Modules</a></li>
+          <li><a href="#workflow" class="navbar__link"><svg class="icon" aria-hidden="true"><use href="#icon-flow"></use></svg>How It Works</a></li>
+          <li><a href="#research" class="navbar__link"><svg class="icon" aria-hidden="true"><use href="#icon-scroll"></use></svg>Research</a></li>
+          <li><a href="#contact" class="navbar__link"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>Contact</a></li>
+        </ul>
+        <div class="navbar__actions">
+          <button class="btn-theme" id="btn-theme" aria-label="Toggle colour theme">
+            <svg class="icon icon--sun" aria-hidden="true"><use href="#icon-sun"></use></svg>
+            <svg class="icon icon--moon" aria-hidden="true"><use href="#icon-moon"></use></svg>
+          </button>
+          <button class="btn btn--gold" id="nav-enter-btn" data-modal-open="modal-profile">
+            <svg class="icon" aria-hidden="true"><use href="#icon-user"></use></svg>
+            <span class="btn__text">Enter Sabha</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__container container">
+        <div class="hero__content">
+          <p class="hero__eyebrow reveal"><span class="eyebrow-line"></span> Indian Knowledge System <span class="eyebrow-line"></span></p>
+          <h1 class="hero__title reveal" id="hero-title">Ancient Wisdom.<br><span class="hero__title-accent">Intelligent Decisions.</span></h1>
+          <p class="hero__subtitle reveal">ArthaNiti AI transforms Kautilya's <em>Arthashastra</em> — a 2,300-year-old treatise on statecraft — into a modern <strong>Rule-Based Strategic Decision Support System</strong>. Every recommendation emerges from predefined IF-THEN rules, not machine learning.</p>
+          <div class="hero__actions reveal">
+            <button class="btn btn--gold btn--large" id="hero-enter-btn">
+              <svg class="icon" aria-hidden="true"><use href="#icon-crown"></use></svg>
+              <span class="btn__text">Enter Sabha</span>
+            </button>
+            <a href="#modules" class="btn btn--ghost btn--large">
+              <svg class="icon" aria-hidden="true"><use href="#icon-grid"></use></svg>
+              <span class="btn__text">Explore Modules</span>
+            </a>
+          </div>
+          <div class="hero__meta reveal">
+            <span class="hero__meta-item"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Rule-Based AI</span>
+            <span class="hero__meta-item"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>7 Strategic Domains</span>
+            <span class="hero__meta-item"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Zero Data Required</span>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="hero__visual-stack">
+            <figure class="hero__fig hero__fig--main">
+              <img src="assets/images/chanakya-strategist.jpg" alt="Kautilya (Chanakya) seated on a low dais in a torchlit Mauryan council chamber, expounding the Arthashastra from an open palm-leaf manuscript before the king’s ministers" width="1152" height="992" class="hero__img" fetchpriority="high" decoding="async" sizes="(max-width: 900px) 92vw, 620px">
+              <figcaption class="visually-hidden">Chanakya — chief strategist of the Mauryan court</figcaption>
+            </figure>
+            <figure class="hero__fig hero__fig--map">
+              <img src="assets/images/ancient-map.jpg" alt="Antique parchment map of the ancient Indian subcontinent marking Takshashila, Pataliputra and Ujjayini, overlaid with the concentric Mandala circles of neighbouring states" width="1280" height="832" class="hero__map" loading="lazy" decoding="async" sizes="(max-width: 900px) 60vw, 380px">
+            </figure>
+            <figure class="hero__fig hero__fig--viz">
+              <img src="assets/images/battle-formation.jpg" alt="Aerial view of a Mauryan army arrayed in the chakra-vyuha wheel formation with concentric rings of infantry, war elephants, chariots and cavalry wings" width="1024" height="832" class="hero__viz" loading="lazy" decoding="async" sizes="(max-width: 900px) 50vw, 300px">
+            </figure>
+            <div class="hero__seal" aria-hidden="true">
+              <img src="assets/icons/logo.svg" alt="" width="72" height="72">
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#royal-entry" class="scroll-indicator" id="scroll-indicator" aria-label="Scroll down">
+        <span class="scroll-indicator__text">Begin the Journey</span>
+        <span class="scroll-indicator__mouse"><span class="scroll-indicator__wheel"></span></span>
+        <svg class="icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+      </a>
+    </section>
+
+    <!-- ============================== ROYAL ENTRY ============================== -->
+    <section class="royal-entry" id="royal-entry" aria-labelledby="royal-title">
+      <div class="container container--narrow">
+        <div class="section-head reveal">
+          <p class="section-head__kicker">Step Through the Gate</p>
+          <h2 class="section-head__title" id="royal-title">Royal Entry</h2>
+          <p class="section-head__sub">Every strategist in the royal court is known by name. Share yours to enter the <em>Sabha</em> of ArthaNiti AI.</p>
+        </div>
+
+        <div class="royal-card reveal" id="royal-card">
+          <div class="royal-card__crest" aria-hidden="true">
+            <img src="assets/icons/logo.svg" alt="" width="64" height="64">
+          </div>
+          <h3 class="royal-card__title">Announce Your Presence</h3>
+          <p class="royal-card__hint">No password is required. Your identity is honoured only within this browser.</p>
+
+          <form id="entry-form" class="royal-form" novalidate>
+            <div class="field">
+              <label class="field__label" for="entry-name">Full Name</label>
+              <div class="field__control">
+                <svg class="icon" aria-hidden="true"><use href="#icon-user"></use></svg>
+                <input class="field__input" type="text" id="entry-name" name="name" placeholder="e.g. Arya Sharma" autocomplete="name" required>
+              </div>
+              <p class="field__error" id="entry-name-error" role="alert" hidden>Please enter your full name to enter the Sabha.</p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="entry-role">Your Role</label>
+              <div class="field__control">
+                <svg class="icon" aria-hidden="true"><use href="#icon-crown"></use></svg>
+                <select class="field__input field__select" id="entry-role" name="role" required>
+                  <option value="" disabled selected>Choose your role in the council</option>
+                  <option value="Student">Student</option>
+                  <option value="Research Scholar">Research Scholar</option>
+                  <option value="Defence Strategist">Defence Strategist</option>
+                  <option value="Economic Advisor">Economic Advisor</option>
+                  <option value="Policy Maker">Policy Maker</option>
+                  <option value="Diplomat">Diplomat</option>
+                  <option value="Cyber Security Analyst">Cyber Security Analyst</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn--gold btn--block btn--large" id="enter-sabha-btn">
+              <svg class="icon" aria-hidden="true"><use href="#icon-crown"></use></svg>
+              <span class="btn__text">Enter Sabha</span>
+            </button>
+            <p class="royal-form__note">Your name and role are stored locally in your browser and never leave this device.</p>
+          </form>
+
+          <div class="royal-card__identity" id="royal-identity" hidden>
+            <img src="assets/icons/logo.svg" alt="" class="royal-card__identity-seal" width="56" height="56">
+            <p class="royal-card__identity-greet">The court welcomes you,</p>
+            <p class="royal-card__identity-name" id="identity-name">—</p>
+            <p class="royal-card__identity-role" id="identity-role">—</p>
+            <div class="royal-card__identity-actions">
+              <button class="btn btn--gold" id="identity-continue">
+                <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+                <span class="btn__text">Proceed to the Court</span>
+              </button>
+              <button class="btn btn--ghost" id="identity-reset">
+                <svg class="icon" aria-hidden="true"><use href="#icon-logout"></use></svg>
+                <span class="btn__text">Leave the Sabha</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== WELCOME BANNER ============================== -->
+    <aside class="welcome-banner" id="welcome-banner" role="status" aria-live="polite" hidden>
+      <div class="welcome-banner__inner container">
+        <div class="welcome-banner__seal" aria-hidden="true"><img src="assets/icons/logo.svg" alt="" width="40" height="40"></div>
+        <p class="welcome-banner__text"><span id="welcome-name">Guest</span>, the Sabha is yours. <span class="welcome-banner__role" id="welcome-role">Strategist</span> · Choose a module to begin.</p>
+        <button class="welcome-banner__close" id="welcome-close" aria-label="Dismiss welcome banner">
+          <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ============================== ABOUT ============================== -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-head__kicker">The Vision</p>
+          <h2 class="section-head__title" id="about-title">About ArthaNiti AI</h2>
+        </div>
+
+        <div class="about__grid">
+          <article class="about__block reveal">
+            <span class="about__num">01</span>
+            <h3 class="about__heading">The Indian Knowledge System</h3>
+            <p>Rooted in the <em>Indian Knowledge System</em> (IKS), ArthaNiti AI honours the intellectual heritage of <strong>Takshashila</strong>, the ancient world's first great university, where statecraft, economics and ethics were taught as a unified science.</p>
+          </article>
+
+          <article class="about__block reveal">
+            <span class="about__num">02</span>
+            <h3 class="about__heading">The Arthashastra</h3>
+            <p>Composed by <strong>Kautilya (Chanakya)</strong>, the <em>Arthashastra</em> is a 15-book treatise on governance, strategy, economics and espionage. Its axioms — encoded as concise principles — resemble modern decision rules with startling clarity.</p>
+          </article>
+
+          <article class="about__block reveal">
+            <span class="about__num">03</span>
+            <h3 class="about__heading">Rule-Based AI</h3>
+            <p>Instead of learning from data, ArthaNiti AI uses a <strong>forward-chaining rule engine</strong>: your scenario is matched against curated <code>IF&nbsp;condition&nbsp;THEN&nbsp;principle&nbsp;and&nbsp;consequent</code> rules drawn from the Arthashastra. Every output is deterministic, transparent and explainable.</p>
+          </article>
+
+          <article class="about__block reveal">
+            <span class="about__num">04</span>
+            <h3 class="about__heading">Modern Applications</h3>
+            <p>From <strong>governance</strong> and <strong>public administration</strong> to <strong>defence</strong>, <strong>business strategy</strong> and <strong>cyber security</strong>, the timeless principles of the Arthashastra are mapped to contemporary strategic challenges.</p>
+          </article>
+        </div>
+
+        <blockquote class="quote-banner reveal">
+          <svg class="quote-banner__mark" aria-hidden="true"><use href="#icon-quote"></use></svg>
+          <p class="quote-banner__text">"The discipline should protect the kingdom from every quarter. This is the first and highest duty of the King — for the welfare of the state lies in the welfare of the subjects."</p>
+          <footer class="quote-banner__cite">— Kautilya, Arthashastra · Book 1, On the Subject of Discipline</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============================== FEATURES ============================== -->
+    <section class="features" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-head__kicker">What Makes It Exceptional</p>
+          <h2 class="section-head__title" id="features-title">Features</h2>
+          <p class="section-head__sub">A decision companion built like a royal advisory council — transparent, principled and powerful.</p>
+        </div>
+
+        <div class="features__grid">
+          <article class="feature-card reveal">
+            <div class="feature-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-rule"></use></svg></div>
+            <h3 class="feature-card__title">Rule-Based AI</h3>
+            <p class="feature-card__text">Deterministic IF-THEN reasoning with a transparent, explainable rule engine — no opaque black-box models.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-scroll"></use></svg></div>
+            <h3 class="feature-card__title">Ancient Knowledge</h3>
+            <p class="feature-card__text">2,300 years of Kautilyan statecraft, codified from the 15 books of the Arthashastra into operational rules.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-target"></use></svg></div>
+            <h3 class="feature-card__title">Strategic Planning</h3>
+            <p class="feature-card__text">From <em>Saptanga</em> statecraft to the six-fold policy, structured frameworks for long-horizon strategy.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-globe"></use></svg></div>
+            <h3 class="feature-card__title">Modern Applications</h3>
+            <p class="feature-card__text">Governance, defence, diplomacy, economics and cyber — mapped to contemporary decision contexts.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-dashboard"></use></svg></div>
+            <h3 class="feature-card__title">Interactive Dashboard</h3>
+            <p class="feature-card__text">Confidence scores, risk levels, progress bars and visual traces for every recommendation rendered.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-bulb"></use></svg></div>
+            <h3 class="feature-card__title">Intelligent Recommendations</h3>
+            <p class="feature-card__text">Each decision ships with reasoning, applied principle, modern interpretation and suggested actions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== STRATEGIC MODULES ============================== -->
+    <section class="modules" id="modules" aria-labelledby="modules-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-head__kicker">Seven Pillars of the Sabha</p>
+          <h2 class="section-head__title" id="modules-title">Strategic Modules</h2>
+          <p class="section-head__sub">Each module connects an <strong>Ancient Arthashastra Principle</strong> → <strong>Modern Problem</strong> → <strong>Rule Engine</strong> → <strong>Recommendation</strong>.</p>
+        </div>
+
+        <div class="modules__grid">
+          <button class="module-card reveal" type="button" data-module="security" aria-label="Open National Security &amp; Military Strategy module">
+            <span class="module-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-shield"></use></svg></span>
+            <h3 class="module-card__title">National Security &amp; Military Strategy</h3>
+            <p class="module-card__text">Territorial integrity, warfare, battle formations, logistics and the six-fold policy of war and peace.</p>
+            <span class="module-card__link">Enter Module <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></span>
+          </button>
+
+          <button class="module-card reveal" type="button" data-module="economy" aria-label="Open Economy, Trade &amp; Business Strategy module">
+            <span class="module-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-coin"></use></svg></span>
+            <h3 class="module-card__title">Economy, Trade &amp; Business Strategy</h3>
+            <p class="module-card__text">Revenue, commerce, price regulation and market discipline drawn from the books on state economy.</p>
+            <span class="module-card__link">Enter Module <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></span>
+          </button>
+
+          <button class="module-card reveal" type="button" data-module="governance" aria-label="Open Governance &amp; Smart Administration module">
+            <span class="module-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-columns"></use></svg></span>
+            <h3 class="module-card__title">Governance &amp; Smart Administration</h3>
+            <p class="module-card__text">Law, order, accountability and citizen welfare in the conduct of the state's daily affairs.</p>
+            <span class="module-card__link">Enter Module <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></span>
+          </button>
+
+          <button class="module-card reveal" type="button" data-module="intelligence" aria-label="Open Intelligence, Cyber Security &amp; Information Warfare module">
+            <span class="module-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-eye"></use></svg></span>
+            <h3 class="module-card__title">Intelligence, Cyber Security &amp; Information Warfare</h3>
+            <p class="module-card__text">The science of espionage, counter-intelligence and the modern battle for information.</p>
+            <span class="module-card__link">Enter Module <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></span>
+          </button>
+
+          <button class="module-card reveal" type="button" data-module="diplomacy" aria-label="Open Diplomacy &amp; Geopolitics module">
+            <span class="module-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-globe"></use></svg></span>
+            <h3 class="module-card__title">Diplomacy &amp; Geopolitics</h3>
+            <p class="module-card__text">The <em>Mandala</em> of states — circles of friends, rivals and neutrals in the global order.</p>
+            <span class="module-card__link">Enter Module <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></span>
+          </button>
+
+          <button class="module-card reveal" type="button" data-module="crisis" aria-label="Open Crisis &amp; Disaster Management module">
+            <span class="module-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-warning"></use></svg></span>
+            <h3 class="module-card__title">Crisis &amp; Disaster Management</h3>
+            <p class="module-card__text">Famine, calamity and unrest — the royal art of protection and swift restoration of order.</p>
+            <span class="module-card__link">Enter Module <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></span>
+          </button>
+
+          <button class="module-card reveal" type="button" data-module="ethics" aria-label="Open Ethical Leadership &amp; Strategic Decision Analysis module">
+            <span class="module-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-scale"></use></svg></span>
+            <h3 class="module-card__title">Ethical Leadership &amp; Strategic Decision Analysis</h3>
+            <p class="module-card__text">Dharma-anchored leadership, accountability and the moral calculus of power.</p>
+            <span class="module-card__link">Enter Module <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></span>
+          </button>
+        </div>
+
+        <!-- ===================== DEDICATED MODULE EXPERIENCE ===================== -->
+        <div class="module-stage" id="module-stage" hidden>
+
+          <!-- MODULE INFORMATION VIEW -->
+          <article class="module-view" id="module-info-panel">
+            <div class="module-view__nav">
+              <button class="btn btn--ghost" type="button" id="module-back-to-modules">
+                <span class="btn__text">&larr; Back to Modules</span>
+              </button>
+              <p class="module-view__badge" id="module-view-badge">Module</p>
+            </div>
+
+            <figure class="module-view__figure">
+              <img id="module-view-image" src="" alt="" width="1280" height="720" loading="lazy" decoding="async">
+              <figcaption class="module-view__caption" id="module-view-caption"></figcaption>
+            </figure>
+
+            <div class="module-view__body">
+              <h3 class="module-view__title" id="module-view-title"></h3>
+              <p class="module-view__subtitle" id="module-view-subtitle"></p>
+              <p class="module-view__lede" id="module-view-description"></p>
+
+              <div class="module-view__grid">
+                <section class="module-view__card">
+                  <h4 class="module-view__card-title">What ArthaNiti AI Can Advise On</h4>
+                  <ul class="module-view__list" id="module-view-advice"></ul>
+                </section>
+                <section class="module-view__card">
+                  <h4 class="module-view__card-title">Ancient Arthashastra Connection</h4>
+                  <p class="module-view__card-text" id="module-view-ancient"></p>
+                </section>
+                <section class="module-view__card">
+                  <h4 class="module-view__card-title">Modern Application</h4>
+                  <p class="module-view__card-text" id="module-view-modern"></p>
+                </section>
+              </div>
+
+              <blockquote class="module-view__example">
+                <h4 class="module-view__card-title">Example Situation</h4>
+                <p id="module-view-example"></p>
+              </blockquote>
+
+              <button class="btn btn--gold btn--large module-view__launch" type="button" id="module-launch-btn">
+                <svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg>
+                <span class="btn__text">Launch ArthaNiti AI</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- MODULE-SPECIFIC AI CONSULTATION -->
+          <div class="workflow__console module-console" id="module-console" hidden>
+            <div class="workflow__console-head">
+              <div class="workflow__console-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <p class="workflow__console-title">ArthaNiti AI</p>
+              <button class="btn btn--ghost btn--small module-console__back" type="button" id="module-back-to-module">
+                <span class="btn__text">&larr; Back to Module</span>
+              </button>
+            </div>
+            <div class="workflow__console-body">
+              <p class="module-console__context">
+                <span class="module-console__context-label">Active Expert Domain</span>
+                <span class="module-console__context-name" id="module-console-name"></span>
+                <span class="module-console__context-persona" id="module-console-persona"></span>
+              </p>
+
+              <form class="scenario-form" id="scenario-form">
+                <div class="field">
+                  <label class="field__label" for="scenario-input">Ask Your Question</label>
+                  <div class="field__control field__control--area">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-doc"></use></svg>
+                    <textarea class="field__input field__textarea" id="scenario-input" rows="3" placeholder="Describe your situation..." required></textarea>
+                  </div>
+                </div>
+                <div class="workflow__console-actions">
+                  <button type="submit" class="btn btn--gold btn--large" id="run-analysis-btn">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg>
+                    <span class="btn__text">Consult ArthaNiti AI</span>
+                  </button>
+                  <button type="button" class="btn btn--ghost" id="module-use-example">
+                    <span class="btn__text">Use example situation</span>
+                  </button>
+                </div>
+                <p class="workflow__hint" id="module-console-hint"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== AI WORKFLOW ============================== -->
+    <section class="workflow" id="workflow" aria-labelledby="workflow-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-head__kicker">The Engine Room</p>
+          <h2 class="section-head__title" id="workflow-title">The AI Workflow</h2>
+          <p class="section-head__sub">Six steps transform a modern dilemma into an Arthashastra-anchored strategic recommendation.</p>
+        </div>
+
+        <ol class="workflow__timeline reveal">
+          <li class="workflow__step">
+            <span class="workflow__step-num">1</span>
+            <div class="workflow__step-body">
+              <h3 class="workflow__step-title">Choose Module</h3>
+              <p class="workflow__step-text">Select one of the seven strategic domains.</p>
+            </div>
+          </li>
+          <li class="workflow__step">
+            <span class="workflow__step-num">2</span>
+            <div class="workflow__step-body">
+              <h3 class="workflow__step-title">Enter Scenario</h3>
+              <p class="workflow__step-text">Describe your strategic situation in plain language.</p>
+            </div>
+          </li>
+          <li class="workflow__step">
+            <span class="workflow__step-num">3</span>
+            <div class="workflow__step-body">
+              <h3 class="workflow__step-title">Rule Analysis</h3>
+              <p class="workflow__step-text">The forward-chaining engine matches IF-THEN rules.</p>
+            </div>
+          </li>
+          <li class="workflow__step">
+            <span class="workflow__step-num">4</span>
+            <div class="workflow__step-body">
+              <h3 class="workflow__step-title">Strategic Recommendation</h3>
+              <p class="workflow__step-text">A deterministic decision emerges with reasoning and actions.</p>
+            </div>
+          </li>
+          <li class="workflow__step">
+            <span class="workflow__step-num">5</span>
+            <div class="workflow__step-body">
+              <h3 class="workflow__step-title">Arthashastra Principle</h3>
+              <p class="workflow__step-text">The ancient sutra that governs the recommended course.</p>
+            </div>
+          </li>
+          <li class="workflow__step">
+            <span class="workflow__step-num">6</span>
+            <div class="workflow__step-body">
+              <h3 class="workflow__step-title">Modern Interpretation</h3>
+              <p class="workflow__step-text">The principle translated for today's strategist.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================== WHY ARTHASHASTRA ============================== -->
+    <section class="why" id="why" aria-labelledby="why-title">
+      <div class="container">
+        <div class="why__grid">
+          <div class="why__content">
+            <div class="section-head section-head--left reveal">
+              <p class="section-head__kicker">Why Arthashastra</p>
+              <h2 class="section-head__title" id="why-title">A Treatise Ahead of Its Time</h2>
+            </div>
+            <p class="why__lead reveal">The Arthashastra predates Sun Tzu's <em>Art of War</em> and Machiavelli's <em>The Prince</em>, yet it offers something they do not — a complete, systematic science of statecraft where ethics, economics and strategy are inseparable.</p>
+            <ul class="why__list">
+              <li class="why__item reveal"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span><strong>Systematic Structure:</strong> 15 books, 150 chapters, 180 topics — a natural architecture for a knowledge base.</span></li>
+              <li class="why__item reveal"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span><strong>Rule-Like Axioms:</strong> Kautilya's maxims read as conditional logic, ready to be formalised.</span></li>
+              <li class="why__item reveal"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span><strong>Ethics by Design:</strong> <em>Dharma</em> is woven into every strategic recommendation.</span></li>
+              <li class="why__item reveal"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span><strong>Proven Legacy:</strong> The science that guided the Mauryan Empire — India's first great unified state.</span></li>
+            </ul>
+          </div>
+          <div class="why__visual reveal">
+            <div class="why__frame">
+              <img src="assets/images/mauryan-fort.jpg" alt="The fortified ramparts, moat and carved gateway of Mauryan Pataliputra at dusk, with watchtowers, torches and royal banners" width="1280" height="832" loading="lazy" decoding="async" sizes="(max-width: 900px) 92vw, 620px">
+              <div class="why__frame-caption">
+                <svg class="icon" aria-hidden="true"><use href="#icon-pin"></use></svg>
+                Takshashila → Pataliputra · The corridor of Indian statecraft
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== RESEARCH ============================== -->
+    <section class="research" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-head__kicker">The Scholarly Foundation</p>
+          <h2 class="section-head__title" id="research-title">Research Sources</h2>
+          <p class="section-head__sub">ArthaNiti AI is grounded in authoritative scholarship on Kautilya and the Indian Knowledge System.</p>
+        </div>
+        <div class="research__grid">
+          <article class="research-card reveal">
+            <div class="research-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-book"></use></svg></div>
+            <h3 class="research-card__title">The Arthashastra</h3>
+            <p class="research-card__text">Critical edition and translation by R.P. Kangle, University of Bombay — the scholarly standard.</p>
+          </article>
+          <article class="research-card reveal">
+            <div class="research-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-doc"></use></svg></div>
+            <h3 class="research-card__title">Kautilya's Arthashastra</h3>
+            <p class="research-card__text">Translation by L.N. Rangarajan, Penguin Classics — accessible modern rendering with structural notes.</p>
+          </article>
+          <article class="research-card reveal">
+            <div class="research-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-scale"></use></svg></div>
+            <h3 class="research-card__title">Indian Knowledge System</h3>
+            <p class="research-card__text">IKS framework of the Ministry of Education (India) recognising the scientific heritage of Indian thought.</p>
+          </article>
+          <article class="research-card reveal">
+            <div class="research-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-bulb"></use></svg></div>
+            <h3 class="research-card__title">Expert Systems Research</h3>
+            <p class="research-card__text">Classical literature on rule-based expert systems and decision support systems (DSS).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== STATISTICS ============================== -->
+    <section class="statistics" id="statistics" aria-labelledby="stats-title">
+      <div class="container">
+        <div class="section-head section-head--light reveal">
+          <p class="section-head__kicker">The Measure of the Sabha</p>
+          <h2 class="section-head__title" id="stats-title">ArthaNiti AI in Numbers</h2>
+        </div>
+        <div class="statistics__grid">
+          <div class="stat reveal">
+            <span class="stat__value"><span class="stat__counter" data-target="48">0</span><span class="stat__suffix">+</span></span>
+            <p class="stat__label">Codified Rules</p>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__value"><span class="stat__counter" data-target="7">0</span></span>
+            <p class="stat__label">Strategic Domains</p>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__value"><span class="stat__counter" data-target="92">0</span><span class="stat__suffix">%</span></span>
+            <p class="stat__label">Decision Traceability</p>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__value"><span class="stat__counter" data-target="25">0</span><span class="stat__suffix">+</span></span>
+            <p class="stat__label">Research Sources</p>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__value"><span class="stat__counter" data-target="12">0</span><span class="stat__suffix">+</span></span>
+            <p class="stat__label">Modern Applications</p>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__value"><span class="stat__counter" data-target="7">0</span></span>
+            <p class="stat__label">Interactive Modules</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== QUOTE ============================== -->
+    <section class="quote-section" id="quote" aria-label="Inspiring quotation">
+      <div class="container container--narrow">
+        <figure class="parchment reveal">
+          <svg class="parchment__mark" aria-hidden="true"><use href="#icon-quote"></use></svg>
+          <blockquote class="parchment__quote">
+            <p>"All state activities depend first on sound counsel and second on strength. Whoever forces his way through with his own counsel shall attain success, for in the loss of the wise lies the ruin of the kingdom."</p>
+          </blockquote>
+          <figcaption class="parchment__cite">
+            <span class="parchment__name">Kautilya</span>
+            <span class="parchment__work">The Arthashastra · Book 1, Chapter 15</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================== CTA ============================== -->
+    <section class="cta" id="cta" aria-labelledby="cta-title">
+      <div class="container container--narrow">
+        <div class="cta__card reveal">
+          <h2 class="cta__title" id="cta-title">Step Into the Royal Sabha</h2>
+          <p class="cta__text">Launch ArthaNiti AI and let two millennia of Kautilyan wisdom illuminate your next strategic decision.</p>
+          <div class="cta__actions">
+            <button class="btn btn--gold btn--large" id="cta-launch-btn">
+              <svg class="icon" aria-hidden="true"><use href="#icon-crown"></use></svg>
+              <span class="btn__text">Launch ArthaNiti AI</span>
+            </button>
+            <a href="#workflow" class="btn btn--ghost btn--large">
+              <svg class="icon" aria-hidden="true"><use href="#icon-flow"></use></svg>
+              <span class="btn__text">See How It Works</span>
+            </a>
+          </div>
+          <p class="cta__note">No sign-up. No data. Your identity lives only in this browser.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="assets/icons/logo.svg" alt="" class="footer__logo" width="52" height="52">
+          <h2 class="footer__name">ArthaNiti <em>AI</em></h2>
+          <p class="footer__tag">Where Ancient Wisdom Powers Modern Decisions.</p>
+          <p class="footer__desc">ArthaNiti AI is an educational demonstration that transforms Kautilya's Arthashastra into a computational rule-based strategic decision support system for governance, defence, diplomacy, economy and public administration.</p>
+          <div class="footer__social">
+            <a href="#contact" class="footer__social-link" aria-label="X (Twitter)">
+              <svg class="icon" aria-hidden="true"><use href="#icon-spark"></use></svg>
+            </a>
+            <a href="#contact" class="footer__social-link" aria-label="LinkedIn">
+              <svg class="icon" aria-hidden="true"><use href="#icon-user"></use></svg>
+            </a>
+            <a href="#contact" class="footer__social-link" aria-label="GitHub">
+              <svg class="icon" aria-hidden="true"><use href="#icon-rule"></use></svg>
+            </a>
+            <a href="#contact" class="footer__social-link" aria-label="YouTube">
+              <svg class="icon" aria-hidden="true"><use href="#icon-send"></use></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__col" aria-label="Quick links">
+          <h3 class="footer__heading">Quick Links</h3>
+          <ul class="footer__list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#modules">Strategic Modules</a></li>
+            <li><a href="#workflow">How It Works</a></li>
+            <li><a href="#research">Research</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Research links">
+          <h3 class="footer__heading">Research</h3>
+          <ul class="footer__list">
+            <li><a href="#research">The Arthashastra (Kangle)</a></li>
+            <li><a href="#research">Arthashastra (Rangarajan)</a></li>
+            <li><a href="#research">Indian Knowledge System</a></li>
+            <li><a href="#research">Expert Systems &amp; DSS</a></li>
+          </ul>
+        </nav>
+
+        <address class="footer__col footer__col--contact">
+          <h3 class="footer__heading">Contact</h3>
+          <ul class="footer__list">
+            <li><a href="mailto:hello@arthaniti.ai"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>hello@arthaniti.ai</a></li>
+            <li><a href="#contact"><svg class="icon" aria-hidden="true"><use href="#icon-pin"></use></svg>Takshashila Campus, India</a></li>
+            <li><a href="#contact"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg>Council in session: 24 × 7</a></li>
+          </ul>
+        </address>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">© <span id="year">2026</span> ArthaNiti AI · Kautilya's Arthashastra as a Rule-Based Strategic Decision Support System.</p>
+        <ul class="footer__bottom-links">
+          <li><button class="footer__link" data-modal-open="modal-privacy">Privacy</button></li>
+          <li><button class="footer__link" data-modal-open="modal-terms">Terms</button></li>
+          <li><button class="footer__link" data-modal-open="modal-about">About This Demo</button></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================== HIDDEN MODALS ============================== -->
+
+  <!-- Generic modal shell -->
+  <div class="modal" id="modal-generic" role="dialog" aria-modal="true" aria-labelledby="modal-generic-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-modal-close aria-label="Close dialog">
+        <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+      </button>
+      <h3 class="modal__title" id="modal-generic-title">ArthaNiti AI</h3>
+      <div class="modal__body" id="modal-generic-body"></div>
+    </div>
+  </div>
+
+  <!-- AI Result modal -->
+  <div class="modal modal--wide" id="modal-ai-result" role="dialog" aria-modal="true" aria-labelledby="ai-result-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-modal-close aria-label="Close dialog">
+        <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+      </button>
+      <div class="ai-result" id="ai-result">
+        <header class="ai-result__head">
+          <p class="ai-result__kicker" id="ai-result-module">Strategic Module</p>
+          <h3 class="modal__title" id="ai-result-title">Strategic Recommendation</h3>
+        </header>
+        <div class="ai-result__body">
+          <div class="ai-result__phase" id="ai-result-phase" hidden>
+            <div class="ai-result__thinking">
+              <span class="ai-result__thinking-ring" aria-hidden="true"></span>
+              <div class="ai-result__thinking-text">
+                <p class="ai-result__thinking-line" id="ai-result-thinking-line">Consulting the Arthashastra...</p>
+                <div class="ai-result__progress"><span id="ai-result-progress-bar"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-result__report" id="ai-result-report" hidden>
+            <div class="ai-result__rec">
+              <svg class="ai-result__rec-icon" aria-hidden="true"><use href="#icon-crown"></use></svg>
+              <div>
+                <h4 class="ai-result__label">Strategic Recommendation</h4>
+                <p class="ai-result__rec-text" id="ai-result-recommendation"></p>
+              </div>
+            </div>
+
+            <div class="ai-result__grid">
+              <div class="ai-result__cell">
+                <h4 class="ai-result__label">Reasoning</h4>
+                <p class="ai-result__text" id="ai-result-reasoning"></p>
+              </div>
+              <div class="ai-result__cell">
+                <h4 class="ai-result__label">Applied Arthashastra Principle</h4>
+                <p class="ai-result__text ai-result__text--principle" id="ai-result-principle"></p>
+                <button class="btn-link" id="ai-result-rule-btn">
+                  <svg class="icon" aria-hidden="true"><use href="#icon-rule"></use></svg>
+                  View Rule Explanation
+                </button>
+              </div>
+              <div class="ai-result__cell">
+                <h4 class="ai-result__label">Modern Interpretation</h4>
+                <p class="ai-result__text" id="ai-result-interpretation"></p>
+              </div>
+              <div class="ai-result__cell">
+                <h4 class="ai-result__label">Suggested Actions</h4>
+                <ul class="ai-result__actions" id="ai-result-actions"></ul>
+              </div>
+            </div>
+
+            <div class="ai-result__gauges">
+              <div class="gauge">
+                <div class="gauge__top">
+                  <span class="gauge__label">Confidence Score</span>
+                  <span class="gauge__value" id="ai-result-confidence">0%</span>
+                </div>
+                <div class="gauge__bar"><span class="gauge__fill" id="ai-result-confidence-bar"></span></div>
+              </div>
+              <div class="gauge">
+                <div class="gauge__top">
+                  <span class="gauge__label">Risk Level</span>
+                  <span class="badge badge--risk" id="ai-result-risk">—</span>
+                </div>
+                <div class="gauge__bar"><span class="gauge__fill gauge__fill--risk" id="ai-result-risk-bar"></span></div>
+              </div>
+            </div>
+
+            <div class="ai-result__trace" id="ai-result-trace">
+              <h4 class="ai-result__label">Rule Trace</h4>
+              <p class="ai-result__trace-text" id="ai-result-trace-text"></p>
+            </div>
+
+            <div class="ai-result__actions-row">
+              <button class="btn btn--gold" id="ai-result-export-pdf">
+                <svg class="icon" aria-hidden="true"><use href="#icon-pdf"></use></svg>
+                <span class="btn__text">Export PDF</span>
+              </button>
+              <button class="btn btn--ghost" data-modal-close>
+                <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+                <span class="btn__text">Close</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading popup -->
+  <div class="modal modal--center" id="modal-loading" role="alertdialog" aria-modal="true" aria-label="Analysis in progress" hidden>
+    <div class="modal__overlay"></div>
+    <div class="modal__panel modal__panel--center">
+      <div class="loading-popup">
+        <img src="assets/icons/logo.svg" alt="" class="loading-popup__seal" width="56" height="56">
+        <p class="loading-popup__title" id="loading-title">Consulting the Sabha...</p>
+        <div class="loading-popup__bar"><span id="loading-bar"></span></div>
+        <p class="loading-popup__sub" id="loading-sub">Matching IF-THEN rules from the Arthashastra</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification modal -->
+  <div class="modal modal--center" id="modal-notification" role="dialog" aria-modal="true" aria-labelledby="notification-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel modal__panel--center">
+      <div class="notification-card">
+        <span class="notification-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-bell"></use></svg></span>
+        <h3 class="notification-card__title" id="notification-title">Notification</h3>
+        <p class="notification-card__text" id="notification-text">ArthaNiti AI has a message for you.</p>
+        <div class="notification-card__actions">
+          <button class="btn btn--gold" data-modal-close><span class="btn__text">Acknowledge</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rule explanation window -->
+  <div class="modal modal--wide" id="modal-rule" role="dialog" aria-modal="true" aria-labelledby="rule-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-modal-close aria-label="Close dialog">
+        <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+      </button>
+      <div class="rule-window">
+        <p class="ai-result__kicker">Rule Explanation</p>
+        <h3 class="modal__title" id="rule-title">The Rule That Fired</h3>
+        <div class="rule-window__rule" id="rule-window-rule"></div>
+        <p class="rule-window__note">This is a static, explainable IF-THEN rule — no probabilities, no hidden weights. Any expert can audit the logic behind every recommendation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Future dashboard placeholder -->
+  <div class="modal modal--wide" id="modal-dashboard" role="dialog" aria-modal="true" aria-labelledby="dashboard-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-modal-close aria-label="Close dialog">
+        <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+      </button>
+      <div class="placeholder-modal">
+        <span class="placeholder-modal__icon" aria-hidden="true"><svg class="icon"><use href="#icon-dashboard"></use></svg></span>
+        <h3 class="modal__title" id="dashboard-title">Strategic Dashboard</h3>
+        <p class="placeholder-modal__text">Your personalised decision dashboard — aggregating rule traces, confidence trends and module activity — will appear here. Unlocked after your first analysis.</p>
+        <div class="placeholder-modal__bars" aria-hidden="true">
+          <span style="--h:35%"></span><span style="--h:62%"></span><span style="--h:48%"></span><span style="--h:78%"></span><span style="--h:55%"></span><span style="--h:88%"></span><span style="--h:70%"></span>
+        </div>
+        <p class="placeholder-modal__status"><span class="dot-pulse" aria-hidden="true"></span> Dashboard initialising</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reports placeholder -->
+  <div class="modal modal--center" id="modal-reports" role="dialog" aria-modal="true" aria-labelledby="reports-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel modal__panel--center">
+      <div class="placeholder-modal">
+        <span class="placeholder-modal__icon" aria-hidden="true"><svg class="icon"><use href="#icon-doc"></use></svg></span>
+        <h3 class="modal__title" id="reports-title">Strategic Reports</h3>
+        <p class="placeholder-modal__text">Generated advisory reports, compiled from your rule traces, will be archived here for export and review.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts placeholder -->
+  <div class="modal modal--center" id="modal-charts" role="dialog" aria-modal="true" aria-labelledby="charts-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel modal__panel--center">
+      <div class="placeholder-modal">
+        <span class="placeholder-modal__icon" aria-hidden="true"><svg class="icon"><use href="#icon-chart"></use></svg></span>
+        <h3 class="modal__title" id="charts-title">Decision Charts</h3>
+        <p class="placeholder-modal__text">Confidence distributions, risk heatmaps and module-usage analytics will render here.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- History placeholder -->
+  <div class="modal modal--center" id="modal-history" role="dialog" aria-modal="true" aria-labelledby="history-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel modal__panel--center">
+      <div class="placeholder-modal">
+        <span class="placeholder-modal__icon" aria-hidden="true"><svg class="icon"><use href="#icon-history"></use></svg></span>
+        <h3 class="modal__title" id="history-title">Decision History</h3>
+        <p class="placeholder-modal__text">A chronological chronicle of every recommendation sought in the Sabha will be listed here.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PDF export placeholder -->
+  <div class="modal modal--center" id="modal-pdf" role="dialog" aria-modal="true" aria-labelledby="pdf-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel modal__panel--center">
+      <div class="placeholder-modal">
+        <span class="placeholder-modal__icon" aria-hidden="true"><svg class="icon"><use href="#icon-pdf"></use></svg></span>
+        <h3 class="modal__title" id="pdf-title">PDF Export</h3>
+        <p class="placeholder-modal__text" id="pdf-modal-text">Your advisory report will be generated as a parchment-styled PDF document.</p>
+        <button class="btn btn--gold" data-modal-close><span class="btn__text">Close</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile placeholder -->
+  <div class="modal modal--center" id="modal-profile" role="dialog" aria-modal="true" aria-labelledby="profile-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel modal__panel--center">
+      <div class="profile-card">
+        <span class="profile-card__seal" aria-hidden="true"><img src="assets/icons/logo.svg" alt="" width="56" height="56"></span>
+        <h3 class="modal__title" id="profile-title">Your Identity in the Sabha</h3>
+        <p class="profile-card__name" id="profile-name">Guest</p>
+        <p class="profile-card__role" id="profile-role">Not yet entered</p>
+        <div class="profile-card__actions">
+          <button class="btn btn--gold" id="profile-enter">
+            <svg class="icon" aria-hidden="true"><use href="#icon-crown"></use></svg>
+            <span class="btn__text">Enter / Change Identity</span>
+          </button>
+          <button class="btn btn--ghost" data-modal-open="modal-settings">
+            <svg class="icon" aria-hidden="true"><use href="#icon-settings"></use></svg>
+            <span class="btn__text">Preferences</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings placeholder -->
+  <div class="modal modal--center" id="modal-settings" role="dialog" aria-modal="true" aria-labelledby="settings-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel modal__panel--center">
+      <div class="settings-card">
+        <span class="settings-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-settings"></use></svg></span>
+        <h3 class="modal__title" id="settings-title">Preferences</h3>
+        <div class="settings-card__row">
+          <label for="setting-animations" class="settings-card__label">Animations</label>
+          <button class="toggle" id="setting-animations" role="switch" aria-checked="true" aria-label="Toggle animations"><span class="toggle__thumb"></span></button>
+        </div>
+        <div class="settings-card__row">
+          <label for="setting-toasts" class="settings-card__label">Notifications</label>
+          <button class="toggle is-on" id="setting-toasts" role="switch" aria-checked="true" aria-label="Toggle notifications"><span class="toggle__thumb"></span></button>
+        </div>
+        <div class="settings-card__row">
+          <label for="setting-motion" class="settings-card__label">Reduce Motion</label>
+          <button class="toggle" id="setting-motion" role="switch" aria-checked="false" aria-label="Toggle reduced motion"><span class="toggle__thumb"></span></button>
+        </div>
+        <button class="btn btn--ghost btn--block" data-modal-open="modal-theme">
+          <svg class="icon" aria-hidden="true"><use href="#icon-moon"></use></svg>
+          <span class="btn__text">Dark Mode &amp; Theme</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dark mode / theme placeholder -->
+  <div class="modal modal--center" id="modal-theme" role="dialog" aria-modal="true" aria-labelledby="theme-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel modal__panel--center">
+      <div class="settings-card">
+        <span class="settings-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-moon"></use></svg></span>
+        <h3 class="modal__title" id="theme-title">Theme &amp; Appearance</h3>
+        <p class="placeholder-modal__text">ArthaNiti AI ships with two royal palettes. Your choice is remembered in this browser.</p>
+        <div class="theme-picker">
+          <button class="theme-picker__option theme-picker__option--dark is-selected" data-theme-option="dark" aria-label="Dark theme" aria-pressed="true">
+            <span class="theme-picker__swatch" aria-hidden="true"></span>Royal Dark
+          </button>
+          <button class="theme-picker__option theme-picker__option--light" data-theme-option="light" aria-label="Light theme" aria-pressed="false">
+            <span class="theme-picker__swatch" aria-hidden="true"></span>Royal Light
+          </button>
+        </div>
+        <button class="btn btn--gold btn--block" data-modal-close><span class="btn__text">Apply</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy placeholder -->
+  <div class="modal modal--center" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="privacy-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel modal__panel--center">
+      <div class="placeholder-modal">
+        <span class="placeholder-modal__icon" aria-hidden="true"><svg class="icon"><use href="#icon-shield"></use></svg></span>
+        <h3 class="modal__title" id="privacy-title">Privacy</h3>
+        <p class="placeholder-modal__text">ArthaNiti AI stores only your name and role in this browser's Local Storage. Nothing is transmitted, tracked or shared.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms placeholder -->
+  <div class="modal modal--center" id="modal-terms" role="dialog" aria-modal="true" aria-labelledby="terms-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel modal__panel--center">
+      <div class="placeholder-modal">
+        <span class="placeholder-modal__icon" aria-hidden="true"><svg class="icon"><use href="#icon-scroll"></use></svg></span>
+        <h3 class="modal__title" id="terms-title">Terms of Use</h3>
+        <p class="placeholder-modal__text">Recommendations are educational interpretations of the Arthashastra for demonstration and research. They are not professional legal, financial or military advice.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- About demo placeholder -->
+  <div class="modal modal--center" id="modal-about" role="dialog" aria-modal="true" aria-labelledby="about-demo-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__panel modal__panel--center">
+      <div class="placeholder-modal">
+        <span class="placeholder-modal__icon" aria-hidden="true"><svg class="icon"><use href="#icon-book"></use></svg></span>
+        <h3 class="modal__title" id="about-demo-title">About This Demo</h3>
+        <p class="placeholder-modal__text">ArthaNiti AI is a demonstration of how the Indian Knowledge System can be implemented as a computational rule-based expert system. Explore the seven modules and observe transparent strategic reasoning.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notifications container -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
