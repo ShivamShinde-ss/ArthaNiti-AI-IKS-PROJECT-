@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="ArthaNiti AI seal">
+  <defs>
+    <linearGradient id="an-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8A6A1D"/>
+      <stop offset="45%" stop-color="#E0BC4B"/>
+      <stop offset="100%" stop-color="#C9A227"/>
+    </linearGradient>
+  </defs>
+  <circle cx="48" cy="48" r="45" fill="none" stroke="url(#an-gold)" stroke-width="2.5"/>
+  <circle cx="48" cy="48" r="38" fill="none" stroke="url(#an-gold)" stroke-width="1" opacity="0.6"/>
+  <g stroke="url(#an-gold)" stroke-width="1.6" fill="none">
+    <circle cx="48" cy="48" r="26"/>
+    <circle cx="48" cy="48" r="6.5" fill="url(#an-gold)" stroke="none"/>
+    <g>
+      <path d="M48 22v52M22 48h52M29.6 29.6l36.8 36.8M66.4 29.6 29.6 66.4"/>
+      <path d="M48 24.6 60 30l-6 12M48 71.4 36 66l6-12" opacity="0.35"/>
+    </g>
+  </g>
+  <g fill="url(#an-gold)" opacity="0.9">
+    <path d="M48 6.5 51.5 13h-7z"/>
+    <path d="M48 89.5 44.5 83h7z"/>
+  </g>
+</svg>
